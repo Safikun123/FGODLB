@@ -5,5 +5,4 @@ requests
 py3rijndael
 msgpack
 coloredlogs
-croniter
 fake-useragent
