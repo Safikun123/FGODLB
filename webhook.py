@@ -72,7 +72,7 @@ def topLogin(data: list) -> None:
                         "inline": True
                     },
                     {
-                        "name": "White Prism",
+                        "name": "Pure Prism",
                         "value": f"{rewards.pureprism}",
                         "inline": True
                     },
@@ -99,7 +99,7 @@ def topLogin(data: list) -> None:
                 ],
                 "thumbnail": {
                     "url": "https://www.fate-go.jp/manga_fgo3/images/commnet_chara02.png"
-                }
+                }                }
             }
         ],
         "attachments": []
@@ -158,7 +158,7 @@ def drawFP(servants, missions) -> None:
 
         for servant in servants:
             svt = svt_dict[servant.objectId]
-            message_servant += f"`{svt['name']}`\n "
+            message_servant += f"`{svt['name']}` "
 
     if(len(missions) > 0):
         for mission in missions:
@@ -173,13 +173,13 @@ def drawFP(servants, missions) -> None:
                 "color": 5750876,
                 "fields": [
                     {
-                        "name": "Gacha Results",
+                        "name": "Gacha results",
                         "value": f"{message_servant}",
                         "inline": False
                     }
                 ],
                 "thumbnail": {
-                    "url": "https://www.fate-go.jp/manga_fgo3/images/commnet_chara04.png"
+                    "url": "https://www.fate-go.jp/manga_fgo/images/commnet_chara04.png"
                 }
             }
         ],
