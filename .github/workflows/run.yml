@@ -19,20 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.11]
-
+        python-version: [3.8]
     steps:
-      - name: Install dependencies
-        run: pip install -r https://raw.githubusercontent.com/xdeadboy666x/FGODLB/main/requirements.txt
+    
+      - name: Gettings files from Repo
+        uses: actions/checkout@v2
         
-      - name: Fetch repository files
-        uses: actions/checkout@v4
-
-      - name: Set Time Zone
+      - name: Install Requeriments
         run: |
-           sudo timedatectl set-timezone 'America/Mexico_City'
+          pip install -r requirements.txt
 
-      - name: Execute script 1
+      - name: Execute main script 1
         run: |
           python3 main.py
         env:
@@ -42,8 +39,12 @@ jobs:
           UserAgent: ${{ secrets.GAME_USERAGENT }}
           fateRegion: ${{ secrets.GAME_REGION }}
           webhookDiscord: ${{ secrets.DISCORD_WEBHOOK }}
+          IDEMPOTENCY_KEY_SIGNATURE_SECRET: ${{ secrets.IDEMPOTENCY_KEY_SIGNATURE_SECRET }}
+          DEVICE_INFO_SECRET: ${{ secrets.DEVICE_INFO_SECRET }}
+          USER_AGENT_SECRET_2: ${{ secrets.USER_AGENT_SECRET_2 }}
 
-      - name: Execute script 2
+
+      - name: Execute main script 2
         run: |
           python3 main02.py
         env:
@@ -53,3 +54,6 @@ jobs:
           UserAgent: ${{ secrets.GAME_USERAGENT }}
           fateRegion: ${{ secrets.GAME_REGION }}
           webhookDiscord: ${{ secrets.DISCORD_WEBHOOK }}
+          IDEMPOTENCY_KEY_SIGNATURE_SECRET: ${{ secrets.IDEMPOTENCY_KEY_SIGNATURE_SECRET }}
+          DEVICE_INFO_SECRET: ${{ secrets.DEVICE_INFO_SECRET }}
+          USER_AGENT_SECRET_2: ${{ secrets.USER_AGENT_SECRET_2 }}
