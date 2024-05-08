@@ -99,7 +99,7 @@ def topLogin(data: list) -> None:
                 ],
                 "thumbnail": {
                     "url": "https://www.fate-go.jp/manga_fgo3/images/commnet_chara02.png"
-                }                }
+                }
             }
         ],
         "attachments": []
