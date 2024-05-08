@@ -6,7 +6,6 @@ import fgourl
 import user
 import coloredlogs
 import logging
-from datetime import datetime
 
 # Environments Variables
 userIds = os.environ['userIds'].split(',')
